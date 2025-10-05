@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF--8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hai Zuro – Bachrul Azam Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              dark: '#0A0F1F',
+              'light-bg': '#F3F4F6',
+              'accent-blue': {
+                'DEFAULT': '#3B82F6',
+                'glow': '#60A5FA'
+              },
+              'light-text': '#E5E7EB',
+              'dark-text': '#111827'
+            },
+            animation: {
+              'gradient-bg': 'gradient-bg 15s ease infinite',
+              'fade-in-up': 'fade-in-up 1s ease-out forwards',
+              'text-glow-in': 'text-glow-in 2.5s ease-in-out forwards',
+              'fade-out': 'fade-out 0.5s ease-in-out forwards',
+              'content-fade-in': 'content-fade-in 1s ease-in-out forwards',
+              'pulse-glow': 'pulse-glow 4s ease-in-out infinite',
+              'pulse-glow-svg': 'pulse-glow-svg 4s ease-in-out infinite',
+            },
+            keyframes: {
+              'gradient-bg': {
+                '0%, 100%': { backgroundPosition: '0% 50%' },
+                '50%': { backgroundPosition: '100% 50%' },
+              },
+              'fade-in-up': {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              'text-glow-in': {
+                '0%': { opacity: '0', textShadow: '0 0 5px transparent', transform: 'scale(0.9)' },
+                '50%': { opacity: '1', textShadow: '0 0 20px theme("colors.accent-blue.glow")', transform: 'scale(1.05)' },
+                '100%': { opacity: '1', textShadow: '0 0 10px theme("colors.accent-blue.glow")', transform: 'scale(1)' },
+              },
+              'fade-out': {
+                  '0%': { opacity: '1' },
+                  '100%': { opacity: '0', visibility: 'hidden' },
+              },
+              'content-fade-in': {
+                  '0%': { opacity: '0' },
+                  '100%': { opacity: '1' },
+              },
+              'pulse-glow': {
+                '0%, 100%': { 
+                  textShadow: '0 0 8px theme("colors.accent-blue.DEFAULT / 60%"), 0 0 16px theme("colors.accent-blue.glow / 40%")',
+                },
+                '50%': { 
+                  textShadow: '0 0 16px theme("colors.accent-blue.DEFAULT / 80%"), 0 0 32px theme("colors.accent-blue.glow / 60%")',
+                },
+              },
+               'pulse-glow-svg': {
+                '0%, 100%': { 
+                  filter: 'drop-shadow(0 0 3px theme("colors.accent-blue.DEFAULT / 60%")) drop-shadow(0 0 6px theme("colors.accent-blue.glow / 40%"))',
+                },
+                '50%': { 
+                  filter: 'drop-shadow(0 0 6px theme("colors.accent-blue.DEFAULT / 80%")) drop-shadow(0 0 12px theme("colors.accent-blue.glow / 60%"))',
+                },
+              },
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      .glow-text {
+        text-shadow: 0 0 12px theme('colors.accent-blue.DEFAULT / 60%'), 0 0 20px theme('colors.accent-blue.glow / 40%');
+      }
+      .glow-text-hover:hover, .glow-text-hover:focus-visible {
+        color: theme('colors.accent-blue.glow');
+        text-shadow: 0 0 10px theme('colors.accent-blue.glow / 70%');
+      }
+      .glow-card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 0.75rem; /* rounded-xl */
+        padding: 2px; /* border thickness */
+        background: linear-gradient(45deg, theme('colors.accent-blue.DEFAULT'), theme('colors.accent-blue.glow'));
+        -webkit-mask: 
+          linear-gradient(#fff 0 0) content-box, 
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+      }
+      .glow-card:hover::before {
+        opacity: 0.5;
+      }
+      .glow-shadow {
+        box-shadow: 0 0 15px 0px theme('colors.accent-blue.DEFAULT / 30%'), 0 0 30px 0px theme('colors.accent-blue.glow / 20%');
+      }
+      .glow-shadow-hover:hover, .glow-shadow-hover:focus-visible {
+        box-shadow: 0 0 30px 2px theme('colors.accent-blue.DEFAULT / 50%'), 0 0 45px 3px theme('colors.accent-blue.glow / 35%');
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
