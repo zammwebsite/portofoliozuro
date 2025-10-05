@@ -26,7 +26,8 @@ const About: React.FC = () => {
               <div className="bg-accent-blue/10 text-accent-blue font-semibold px-4 py-2 rounded-full">📍 Based in Pacitan, Indonesia</div>
             </div>
             <a
-              href="#"
+              href="./resume.pdf"
+              download="Bachrul-Azam-Resume.pdf"
               className="inline-block px-8 py-3 rounded-full font-bold text-white bg-accent-blue hover:bg-accent-blue-glow glow-shadow-hover transition-all duration-300 transform hover:scale-105"
             >
               Download Resume
