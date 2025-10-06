@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const About: React.FC = () => {
@@ -12,7 +11,7 @@ const About: React.FC = () => {
           <div className="w-full lg:w-1/3 flex justify-center animate-fade-in-up">
             <div className="relative w-64 h-64 md:w-80 md:h-80">
               <img
-                src="./assets/profile.png"
+                src="./profile.png"
                 alt="Bachrul Azam"
                 className="rounded-full object-cover w-full h-full border-4 border-accent-blue/50 glow-shadow"
               />

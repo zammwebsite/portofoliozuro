@@ -1,4 +1,3 @@
-
 import React from 'react';
 import type { SkillCategory, Education, ExperienceItem, Project } from './types';
 import { 
@@ -96,24 +95,24 @@ export const PROJECTS_DATA: Project[] = [
     title: 'Hai Zuro – Portfolio Website',
     description: 'Website portofolio pribadi yang interaktif dan futuristik dengan mode gelap/terang.',
     tags: ['Next.js', 'Tailwind', 'Framer Motion', 'TypeScript'],
-    image: './assets/project-portfolio.png',
+    image: './project-portfolio.png',
   },
   {
     title: 'HI Pacitan – Wisata App',
     description: 'Aplikasi mobile untuk eksplorasi wisata di Pacitan, terintegrasi dengan Maps API.',
     tags: ['React Native', 'Maps API', 'Firebase'],
-    image: './assets/project-hipacitan.png',
+    image: './project-hipacitan.png',
   },
   {
     title: 'SmartStore – Web Toko Online',
     description: 'Platform e-commerce dengan fitur lengkap, dari manajemen produk hingga pembayaran online.',
     tags: ['Next.js', 'Node.js', 'MongoDB', 'Midtrans API'],
-    image: './assets/project-smartstore.png',
+    image: './project-smartstore.png',
   },
   {
     title: 'MCGG Predict – Magic Chess Predictor',
     description: 'Alat berbasis AI untuk memprediksi hasil pertandingan Magic Chess menggunakan data historis.',
     tags: ['Python', 'AI', 'Google Sheets API'],
-    image: './assets/project-mcgg.png',
+    image: './project-mcgg.png',
   },
 ];
