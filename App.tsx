@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -11,7 +11,8 @@ import SplashScreen from './components/SplashScreen';
 
 const App: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
-  const [isLoading, setIsLoading] = useState(true);
+  const [showSplash, setShowSplash] = useState(true);
+  const [isExitingSplash, setIsExitingSplash] = useState(false);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
@@ -22,13 +23,21 @@ const App: React.FC = () => {
       setIsDarkMode(true);
       document.documentElement.classList.add('dark');
     }
-
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2500); // Match animation duration
-
-    return () => clearTimeout(timer);
   }, []);
+  
+  const handleEnter = useCallback(() => {
+    if (isExitingSplash) return;
+    setIsExitingSplash(true);
+    setTimeout(() => {
+      setShowSplash(false);
+    }, 500); // Must match SplashScreen transition duration
+  }, [isExitingSplash]);
+
+  useEffect(() => {
+    const timer = setTimeout(handleEnter, 5000);
+    return () => clearTimeout(timer);
+  }, [handleEnter]);
+
 
   const toggleTheme = () => {
     setIsDarkMode(prevMode => {
@@ -46,8 +55,8 @@ const App: React.FC = () => {
 
   return (
     <>
-      {isLoading && <SplashScreen />}
-      <div className={`bg-light-bg dark:bg-dark text-dark-text dark:text-light-text font-sans transition-colors duration-300 ${!isLoading ? 'animate-content-fade-in' : 'opacity-0'}`}>
+      {showSplash && <SplashScreen isExiting={isExitingSplash} onEnter={handleEnter} />}
+      <div className={`bg-light-bg dark:bg-dark text-dark-text dark:text-light-text font-sans transition-colors duration-300 ${!showSplash ? 'animate-content-fade-in' : 'opacity-0'}`}>
         <Navbar isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
         <main>
           <Hero />

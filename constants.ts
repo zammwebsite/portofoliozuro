@@ -96,24 +96,24 @@ export const PROJECTS_DATA: Project[] = [
     title: 'Hai Zuro – Portfolio Website',
     description: 'Website portofolio pribadi yang interaktif dan futuristik dengan mode gelap/terang.',
     tags: ['Next.js', 'Tailwind', 'Framer Motion', 'TypeScript'],
-    image: 'https://picsum.photos/seed/portfolio/600/400',
+    image: './assets/project-portfolio.png',
   },
   {
     title: 'HI Pacitan – Wisata App',
     description: 'Aplikasi mobile untuk eksplorasi wisata di Pacitan, terintegrasi dengan Maps API.',
     tags: ['React Native', 'Maps API', 'Firebase'],
-    image: 'https://picsum.photos/seed/pacitan/600/400',
+    image: './assets/project-hipacitan.png',
   },
   {
     title: 'SmartStore – Web Toko Online',
     description: 'Platform e-commerce dengan fitur lengkap, dari manajemen produk hingga pembayaran online.',
     tags: ['Next.js', 'Node.js', 'MongoDB', 'Midtrans API'],
-    image: 'https://picsum.photos/seed/store/600/400',
+    image: './assets/project-smartstore.png',
   },
   {
     title: 'MCGG Predict – Magic Chess Predictor',
     description: 'Alat berbasis AI untuk memprediksi hasil pertandingan Magic Chess menggunakan data historis.',
     tags: ['Python', 'AI', 'Google Sheets API'],
-    image: 'https://picsum.photos/seed/mcgg/600/400',
+    image: './assets/project-mcgg.png',
   },
 ];
